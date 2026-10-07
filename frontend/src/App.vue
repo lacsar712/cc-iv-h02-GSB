@@ -58,7 +58,7 @@ const ff = ref("");
 const error = ref("");
 const loading = ref(false);
 let timer;
-const isWriter = computed(() => true); /* h02-trap-form */
+const isWriter = computed(() => session.value?.role === "writer");
 function headers() {
   return session.value ? { Authorization: "Bearer " + session.value.token } : {};
 }

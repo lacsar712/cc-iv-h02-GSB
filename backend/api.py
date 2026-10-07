@@ -65,7 +65,7 @@ def user_from(request: Request):
     sub = payload.get("sub")
     if sub not in USERS:
         return None
-    return {"username": sub, "role": payload.get("role")}
+    return {"username": sub, "role": USERS[sub]["role"]}
 
 
 def need_login(request: Request):
